@@ -10,6 +10,9 @@ async function run() {
   const workflowName = core.getInput("workflowName", { required: true });
   const workflowPath = core.getInput("workflowPath", { required: true });
 
+
+  console.log(github_token, workflowRef, workflowName, workflowPath);
+
   const wf = `https://api.github.com/repos/${workflowPath}/actions/workflows/${workflowName}/dispatches`;
   const payload = { "ref": workflowRef };
   const headers = {
